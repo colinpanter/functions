@@ -8,3 +8,6 @@ class FunctionAdd(Function):
     
     def __call__(self, x: float) -> float:
         return self.fct1(x) + self.fct2(x)
+    
+    def derivative(self):
+        return self.fct1.derivative() + self.fct2.derivative()

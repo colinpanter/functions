@@ -1,9 +1,18 @@
-from functions_templates.classFunction import Function
-from functions_templates.classVariable import Variable
-from functions_templates.classFunctionLinear import FunctionLinear
+import matplotlib.pyplot as plt
+from functions import Variable, FunctionLinear
 
 
 if __name__ == "__main__":
-    x = Variable()
-    f = FunctionLinear(x, a=4, b=2)
-    print(f(2))
+    var = Variable()
+    f = FunctionLinear(var, b=-5) * FunctionLinear(var, b=5) * var
+
+    x = list(range(-5, 6))
+    y = [f(xi) for xi in x]
+    plt.plot(x, y)
+    plt.show()
+
+    f2 = f.derivative()
+    x = list(range(-5, 6))
+    y = [f2(xi) for xi in x]
+    plt.plot(x, y)
+    plt.show()

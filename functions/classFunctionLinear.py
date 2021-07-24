@@ -1,4 +1,4 @@
-from .classFunction import Function
+from .base.classFunction import Function
 
 
 class FunctionLinear(Function):
@@ -9,3 +9,6 @@ class FunctionLinear(Function):
     
     def __call__(self, x: float) -> float:
         return self.a * self.fct(x) + self.b
+    
+    def derivative(self):
+        return FunctionLinear(self.fct.derivative(), a=self.a)
