@@ -3,16 +3,7 @@ from functions import Variable, FunctionLinear
 
 
 if __name__ == "__main__":
-    var = Variable()
-    f = FunctionLinear(var, b=-5) * FunctionLinear(var, b=5) * var
+    x = Variable()
+    f = x * x
 
-    x = list(range(-5, 6))
-    y = [f(xi) for xi in x]
-    plt.plot(x, y)
-    plt.show()
-
-    f2 = f.derivative()
-    x = list(range(-5, 6))
-    y = [f2(xi) for xi in x]
-    plt.plot(x, y)
-    plt.show()
+    f.derivative().derivative().derivative().plot(-4, 4)
