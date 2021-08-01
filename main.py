@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
-from functions import Variable, FunctionLinear
+from functions import Variable, FunctionLinear, Constant
 
 
 if __name__ == "__main__":
     x = Variable()
-    f = x * x
+    one = Constant(1)
+    f = x - x*x
 
-    f.derivative().derivative().derivative().plot(-4, 4)
+    f.plot(-2, 2)

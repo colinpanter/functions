@@ -17,10 +17,21 @@ class Function:
         plt.plot(x, y)
         plt.show()
     
+    def __neg__(self):
+        from .classFunctionNeg import FunctionNeg
+        return FunctionNeg(self)
+
     def __add__(self, other):
         from .classFunctionAdd import FunctionAdd
         return FunctionAdd(self, other)
+
+    def __sub__(self, other):
+        return self + (-other)
     
     def __mul__(self, other):
         from .classFunctionMul import FunctionMul
         return FunctionMul(self, other)
+    
+    def __truediv__(self, other):
+        from .classFunctionDiv import FunctionDiv
+        return FunctionDiv(self, other)
