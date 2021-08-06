@@ -5,6 +5,9 @@ class Function:
     def __call__(self, x: float) -> float:
         raise NotImplementedError
     
+    def __str__(self):
+        raise NotImplementedError
+    
     def derivative(self):
         raise NotImplementedError
     
@@ -16,7 +19,7 @@ class Function:
 
         plt.plot(x, y)
         plt.show()
-    
+
     def __neg__(self):
         from .classFunctionNeg import FunctionNeg
         return FunctionNeg(self)

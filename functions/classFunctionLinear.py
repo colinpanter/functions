@@ -12,3 +12,6 @@ class FunctionLinear(Function):
     
     def derivative(self):
         return FunctionLinear(self.fct.derivative(), a=self.a)
+    
+    def __str__(self):
+        return f"{self.a}*{str(self.fct)} + {str(self.b)}"

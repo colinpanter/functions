@@ -10,3 +10,6 @@ class Constant(Function):
     
     def derivative(self):
         return Constant(0)
+    
+    def __str__(self):
+        return f"{self.constant}"

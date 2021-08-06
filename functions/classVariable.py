@@ -11,3 +11,6 @@ class Variable(Function):
     def derivative(self):
         from .classConstant import Constant
         return Constant(1)
+    
+    def __str__(self):
+        return "x"

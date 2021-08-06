@@ -11,3 +11,6 @@ class FunctionAdd(Function):
     
     def derivative(self):
         return self.fct1.derivative() + self.fct2.derivative()
+    
+    def __str__(self):
+        return f"{str(self.fct1)} + {str(self.fct2)}"
