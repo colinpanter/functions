@@ -10,8 +10,8 @@ class FunctionExp(Function):
     def __call__(self, x: float) -> float:
         return np.exp(self.fct(x))
     
-    def derivative(self):
+    def derivative(self) -> Function:
         return self.fct.derivative() * FunctionExp(self.fct)
     
-    def __str__(self):
+    def __str__(self) -> str:
         return f"exp({self.fct})"
